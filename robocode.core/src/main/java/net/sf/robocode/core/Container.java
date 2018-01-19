@@ -76,24 +76,24 @@ public final class Container extends ContainerBase {
         loadModule("net.sf.robocode.api", systemLoader);
         final String[] cp = classPath.split(File.pathSeparator);
 
-        loadModule("net.sf.robocode.core", systemLoader);
-        loadModule("net.sf.robocode.battle", systemLoader);
-        loadModule("net.sf.robocode.host", systemLoader);
-        loadModule("net.sf.robocode.repository", systemLoader);
-        loadModule("net.sf.robocode.sound", systemLoader);
-        loadModule("net.sf.robocode.ui", systemLoader);
+//        loadModule("net.sf.robocode.core", systemLoader);
+//        loadModule("net.sf.robocode.battle", systemLoader);
+//        loadModule("net.sf.robocode.host", systemLoader);
+//        loadModule("net.sf.robocode.repository", systemLoader);
+//        loadModule("net.sf.robocode.sound", systemLoader);
+//        loadModule("net.sf.robocode.ui", systemLoader);
 
 
-//        // load core first
-//        for (String path : cp) {
-//            if (path.toLowerCase().contains("robocode.core")) {
-//                loadFromPath(path);
-//            }
-//        }
-//        for (String path : cp) {
-//            loadFromPath(path);
-//            System.out.println(path);
-//        }
+        // load core first
+        for (String path : cp) {
+            if (path.toLowerCase().contains("robocode.core")) {
+                loadFromPath(path);
+            }
+        }
+        for (String path : cp) {
+            loadFromPath(path);
+            System.out.println(path);
+        }
 
         if (known.size() < 2) {
             Logger.logError("Main modules not loaded, something went wrong. We have only " + known.size() + " modules");
